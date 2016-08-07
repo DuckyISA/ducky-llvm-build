@@ -2,6 +2,6 @@ ducky-llvm:
   image: ducky-llvm-builder
   environment:
     - UPLOAD_DIR=/tmp/llvm-upload
-  command: bash -c 'git clone https://github.com/happz/llvm-build.git /tmp/llvm-build && make -C /tmp/llvm-build'
+  command: bash -c 'make -C /llvm-build'
   volumes:
     - /tmp:/tmp/llvm-upload
