@@ -1,0 +1,7 @@
+ducky-llvm:
+  image: ducky-llvm-builder-ubuntu-trusty
+  environment:
+    - UPLOAD_DIR=/tmp/llvm-upload
+  command: bash -c 'make -C /llvm-build'
+  volumes:
+    - /tmp:/tmp/llvm-upload
