@@ -1,8 +1,9 @@
-%global llvm_commit d01c085120d92eeaafd83a3d0473a9110232833b
-%global clang_commit 8e7197d38ef7c8bb812fc78e67c3cd9475c61265
+%global llvm_commit 8103c2430fc3311273b0b9a2bfa3e260f1f5ab52
+%global clang_commit 3112ae31228253ac19b60501a48ff473a5b8f33f
+%global lld_commit ba90f706a03547991ef290b3ae8a05e02921f2ff
 
 Name:		ducky-llvm
-Version:	4.0.0
+Version:	7.0.0
 Release:	1%{?dist}
 Summary:	The Low Level Virtual Machine build for Ducky VM
 
@@ -10,6 +11,7 @@ License:	NCSA
 URL:		https://github.com/happz/llvm
 Source0:  https://github.com/happz/ducky-llvm/archive/%{llvm_commit}/ducky-llvm-%{llvm_commit}.tar.gz
 Source1:  https://github.com/happz/ducky-clang/archive/%{clang_commit}/ducky-clang-%{clang_commit}.tar.gz
+Source2:  https://github.com/happz/ducky-lld/archive/%{lld_commit}/ducky-lld-%{lld_commit}.tar.gz
 
 BuildRequires:  ninja-build
 BuildRequires:	cmake
@@ -28,6 +30,8 @@ This build of LLVM is patched to produce assembly code for Ducky VM.
 %autosetup -n ducky-llvm-%{llvm_commit}
 mkdir -p tools/clang
 tar xzf %{_sourcedir}/ducky-clang-%{clang_commit}.tar.gz -C tools/clang --strip 1
+mkdir -p tools/lld
+tar xzf %{_sourcedir}/ducky-lld-%{lld_commit}.tar.gz -C tools/lld --strip 1
 
 %build
 mkdir -p _build
