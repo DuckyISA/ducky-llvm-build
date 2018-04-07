@@ -1,10 +1,10 @@
-%global llvm_commit 8103c2430fc3311273b0b9a2bfa3e260f1f5ab52
+%global llvm_commit dfa20c6166224a23452104e41785b3c10d09064b
 %global clang_commit 3112ae31228253ac19b60501a48ff473a5b8f33f
 %global lld_commit ba90f706a03547991ef290b3ae8a05e02921f2ff
 
 Name:		ducky-llvm
 Version:	7.0.0
-Release:	2%{?dist}
+Release:	3%{?dist}
 Summary:	The Low Level Virtual Machine build for Ducky VM
 
 License:	NCSA
@@ -44,11 +44,13 @@ cmake .. -DCMAKE_BUILD_TYPE=Release \
          -DLLVM_OPTIMIZED_TABLEGEN=ON \
          -DLLVM_TARGETS_TO_BUILD=Ducky \
          -DLLVM_DEFAULT_TARGET_TRIPLE=ducky-none-none \
-         -DCLANG_VENDOR=happz/ducky
-make %{?_smp_mflags}
+         -DCLANG_VENDOR=happz/ducky \
+         -DCMAKE_INSTALL_PREFIX=%{buildroot}
+cmake --build .
 
 %install
-make install DESTDIR=%{buildroot} -C _build
+# make install DESTDIR=%{buildroot} -C _build
+cmake --build . --target install
 
 %files
 /usr/local/*
