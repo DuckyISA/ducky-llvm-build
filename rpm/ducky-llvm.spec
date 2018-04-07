@@ -49,6 +49,7 @@ cmake .. -DCMAKE_BUILD_TYPE=Release \
 cmake --build .
 
 %install
+cd _build
 # make install DESTDIR=%{buildroot} -C _build
 cmake --build . --target install
 
