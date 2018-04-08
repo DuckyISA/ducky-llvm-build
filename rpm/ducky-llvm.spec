@@ -4,7 +4,7 @@
 
 Name:		ducky-llvm
 Version:	7.0.0
-Release:	3%{?dist}
+Release:	4%{?dist}
 Summary:	The Low Level Virtual Machine build for Ducky VM
 
 License:	NCSA
