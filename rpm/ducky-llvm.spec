@@ -45,7 +45,7 @@ cmake .. -DCMAKE_BUILD_TYPE=Release \
          -DLLVM_TARGETS_TO_BUILD=Ducky \
          -DLLVM_DEFAULT_TARGET_TRIPLE=ducky-none-none \
          -DCLANG_VENDOR=happz/ducky \
-         -DCMAKE_INSTALL_PREFIX=%{buildroot}
+         -DCMAKE_INSTALL_PREFIX=%{buildroot}/opt/ducky
 cmake --build .
 
 %install
@@ -54,7 +54,10 @@ cd _build
 cmake --build . --target install
 
 %files
-/usr/local/*
-%exclude /usr/lib/*
+/bin/*
+/include/*
+/lib/*
+/libexec/*
+/share/*
 
 %changelog
