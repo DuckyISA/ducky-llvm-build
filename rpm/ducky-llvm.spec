@@ -54,10 +54,10 @@ cd _build
 cmake --build . --target install
 
 %files
-/bin/*
-/include/*
-/lib/*
-/libexec/*
-/share/*
+/opt/ducky/bin/*
+/opt/ducky/include/*
+/opt/ducky/lib/*
+/opt/ducky/libexec/*
+/opt/ducky/share/*
 
 %changelog
