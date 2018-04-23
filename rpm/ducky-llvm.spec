@@ -1,4 +1,4 @@
-%global llvm_commit dfa20c6166224a23452104e41785b3c10d09064b
+%global llvm_commit 8897bc90fda5915c0f2153bb3a5b5e7d661b2518
 %global clang_commit 3112ae31228253ac19b60501a48ff473a5b8f33f
 %global lld_commit ba90f706a03547991ef290b3ae8a05e02921f2ff
 
@@ -7,11 +7,11 @@
 
 Name:		ducky-llvm
 Version:	7.0.0
-Release:	5%{?dist}
+Release:	6%{?dist}
 Summary:	The Low Level Virtual Machine build for Ducky VM
 
 License:	NCSA
-URL:		https://github.com/happz/llvm
+URL:      https://github.com/happz/llvm
 Source0:  https://github.com/happz/ducky-llvm/archive/%{llvm_commit}/ducky-llvm-%{llvm_commit}.tar.gz
 Source1:  https://github.com/happz/ducky-clang/archive/%{clang_commit}/ducky-clang-%{clang_commit}.tar.gz
 Source2:  https://github.com/happz/ducky-lld/archive/%{lld_commit}/ducky-lld-%{lld_commit}.tar.gz
