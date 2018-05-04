@@ -1,0 +1,4 @@
+ducky-clang-*.tar.gz
+ducky-lld-*.tar.gz
+ducky-llvm-*.tar.gz
+fetch.sh
