@@ -1,5 +1,5 @@
-%global llvm_commit 1d10e97a63a2f72020333397f4c79f52d8ae2dc9
-%global clang_commit 3112ae31228253ac19b60501a48ff473a5b8f33f
+%global llvm_commit 0a5b999bcbc3d8d6a0d4ca4bff12f3685f78db52
+%global clang_commit 2aa0aa926f3ed639f5041d5dc716cba5abee5035
 %global lld_commit ca81503b8145e715758ed9dfff142b939a93018b
 
 # disable debug package, otherwise error: Empty %files file …/debugfiles.list
@@ -7,7 +7,7 @@
 
 Name:		ducky-llvm
 Version:	7.0.0
-Release:	7%{?dist}
+Release:	8%{?dist}
 Summary:	The Low Level Virtual Machine build for Ducky VM
 
 License:	NCSA
