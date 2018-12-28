@@ -16,6 +16,7 @@ Source0:  https://github.com/happz/ducky-llvm/archive/%{llvm_commit}/ducky-llvm-
 Source1:  https://github.com/happz/ducky-clang/archive/%{clang_commit}/ducky-clang-%{clang_commit}.tar.gz
 Source2:  https://github.com/happz/ducky-lld/archive/%{lld_commit}/ducky-lld-%{lld_commit}.tar.gz
 
+BuildRequires:  gcc-c++
 BuildRequires:  ninja-build
 BuildRequires:	cmake
 BuildRequires:	cmake-data
