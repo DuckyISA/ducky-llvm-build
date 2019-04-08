@@ -50,8 +50,8 @@ cmake --build .
 %install
 cd _build
 cmake --build . --target install
-ln -s /opt/ducky/bin/llvm-ar %{buildroot}/opt/ducky/ducky-unknown-none-ar
-ln -s /opt/ducky/bin/llvm-ranlib %{buildroot}/opt/ducky/ducky-unknown-none-ranlib
+ln -s /opt/ducky/bin/llvm-ar %{buildroot}/opt/ducky/bin/ducky-unknown-none-ar
+ln -s /opt/ducky/bin/llvm-ranlib %{buildroot}/opt/ducky/bin/ducky-unknown-none-ranlib
 
 %files
 /opt/ducky/bin/*
