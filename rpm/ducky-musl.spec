@@ -38,6 +38,10 @@ This build of musl library is patched to work with Ducky ISA boards.
 mkdir -p _build
 cd _build
 
+# Musl calls $CROSS_COMPILE-{ar,ranlib} directly, without the path. hence extending PATH
+# to let it find them.
+export PATH="/opt/ducky/bin:$PATH"
+
 export CC=/opt/ducky/bin/clang
 export CFLAGS="--target=ducky-unknown-none \
                -mllvm -disable-tail-duplicate \
