@@ -13,6 +13,7 @@ URL:      https://duckyisa.github.io/
 Source0:  https://github.com/DuckyISA/llvm-project/archive/%{llvm_commit}/llvm-project-%{llvm_commit}.tar.gz
 
 BuildRequires:  ducky-llvm
+BuildRequires:  ducky-musl
 #BuildRequires:  gcc-c++
 BuildRequires:  ninja-build
 BuildRequires:	cmake
