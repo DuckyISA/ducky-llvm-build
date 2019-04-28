@@ -1,5 +1,0 @@
-ducky-llvm:
-  image: happz/ducky-llvm-builder-gentoo
-  command: bash -c 'make -C /llvm-build'
-  volumes:
-    - /tmp:/tmp/llvm-upload

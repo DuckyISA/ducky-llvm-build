@@ -1,5 +1,0 @@
-ducky-llvm:
-  image: happz/ducky-llvm-builder-ubuntu-trusty
-  command: bash -c 'make -C /llvm-build'
-  volumes:
-    - /tmp:/tmp/llvm-upload
