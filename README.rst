@@ -1,3 +1,4 @@
-Docker images for building Ducky-flavored LLVM version
-======================================================
+Ducky Toolchain build scripts
+=============================
 
+Scripts, tools and files necessary for building Ducky toolchain.
