@@ -10,7 +10,7 @@ Summary:	The Low Level Virtual Machine build for Ducky VM
 
 License:	NCSA
 URL:      https://duckyisa.github.io/
-Source0:  https://github.com/DuckyISA/llvm-project/archive/%{llvm_commit}/llvm-project-%{llvm_commit}.tar.gz
+Source0:  https://github.com/DuckyISA/ducky-llvm/archive/%{llvm_commit}/ducky-llvm-%{llvm_commit}.tar.gz
 
 BuildRequires:  gcc-c++
 BuildRequires:  ninja-build
@@ -27,7 +27,7 @@ tools as well as libraries with equivalent functionality.
 This build of LLVM is patched to produce assembly code for Ducky VM.
 
 %prep
-%autosetup -n llvm-project-%{llvm_commit}
+%autosetup -n ducky-llvm-%{llvm_commit}
 
 %build
 mkdir -p _build
