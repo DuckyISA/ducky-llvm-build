@@ -50,6 +50,7 @@ cmake --build .
 %install
 cd _build
 cmake --build . --target install
+cp bin/FileCheck %{buildroot}/opt/ducky/bin/FileCheck
 ln -s /opt/ducky/bin/llvm-ar %{buildroot}/opt/ducky/bin/ducky-unknown-none-ar
 ln -s /opt/ducky/bin/llvm-ranlib %{buildroot}/opt/ducky/bin/ducky-unknown-none-ranlib
 
