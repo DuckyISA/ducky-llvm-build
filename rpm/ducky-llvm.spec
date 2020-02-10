@@ -1,16 +1,16 @@
-%global llvm_commit 2b9bf4101bed0c66082f60e862a4a4c8eb7561a7
+%global llvm_commit c08427226eda5683fac3495c348f3c85870948d2
 
 # disable debug package, otherwise error: Empty %files file …/debugfiles.list
 %define debug_package %{nil}
 
 Name:		ducky-llvm
-Version:	7.0.1
-Release:	9%{?dist}
+Version:	9.0.1
+Release:	1%{?dist}
 Summary:	The Low Level Virtual Machine build for Ducky VM
 
 License:	NCSA
-URL:      https://duckyisa.github.io/
-Source0:  https://github.com/DuckyISA/ducky-llvm/archive/%{llvm_commit}/ducky-llvm-%{llvm_commit}.tar.gz
+URL:        https://duckyisa.github.io/
+Source0:    https://github.com/DuckyISA/ducky-llvm/archive/%{llvm_commit}/ducky-llvm-%{llvm_commit}.tar.gz
 
 BuildRequires:  gcc-c++
 BuildRequires:  ninja-build
@@ -34,16 +34,19 @@ mkdir -p _build
 cd _build
 
 cmake ../llvm \
-         -DCMAKE_BUILD_TYPE=Release \
-         -DLLVM_ENABLE_ASSERTIONS=Off \
-         -DLLVM_BUILD_TESTS=ON \
-         -DLLVM_BUILD_DOCS=OFF \
-         -DLLVM_OPTIMIZED_TABLEGEN=ON \
-         -DLLVM_TARGETS_TO_BUILD="Ducky;X86" \
-         -DLLVM_DEFAULT_TARGET_TRIPLE=ducky-unknown-none \
+         -DBUILD_SHARED_LIBS=ON \
          -DCLANG_VENDOR=duckyisa/ducky \
+         -DCMAKE_BUILD_TYPE=Release \
+         -DCMAKE_C_FLAGS=-gsplit-dwarf \
+         -DCMAKE_CXX_FLAGS=-gsplit-dwarf \
+         -DCMAKE_INSTALL_PREFIX=%{buildroot}/opt/ducky \
+         -DLLVM_BUILD_DOCS=OFF \
+         -DLLVM_BUILD_TESTS=ON \
+         -DLLVM_DEFAULT_TARGET_TRIPLE=ducky-unknown-none \
+         -DLLVM_ENABLE_ASSERTIONS=Off \
          -DLLVM_ENABLE_PROJECTS="clang;llvm;lld" \
-         -DCMAKE_INSTALL_PREFIX=%{buildroot}/opt/ducky
+         -DLLVM_OPTIMIZED_TABLEGEN=ON \
+         -DLLVM_TARGETS_TO_BUILD="Ducky;X86"
 
 cmake --build .
 

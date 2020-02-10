@@ -1,10 +1,10 @@
-%global llvm_commit 2b9bf4101bed0c66082f60e862a4a4c8eb7561a7
+%global llvm_commit c08427226eda5683fac3495c348f3c85870948d2
 
 # disable debug package, otherwise error: Empty %files file …/debugfiles.list
 %define debug_package %{nil}
 
 Name:     ducky-compiler-rt
-Version:	7.0.1
+Version:	9.0.1
 Release:	1%{?dist}
 Summary:	The Low Level Virtual Machine build for Ducky VM
 
