@@ -1,10 +1,10 @@
-%global musl_commit a26ccb679cd8a3f1849abf92622ebc2feb428d5f
+%global musl_commit 5b674266403f0342bd018a3618af4c6e7f152755
 
 # disable debug package, otherwise error: Empty %files file …/debugfiles.list
 %define debug_package %{nil}
 
 Name:     ducky-musl
-Version:	1.1.22
+Version:	1.1.24
 Release:	1%{?dist}
 Summary:	musl (an MIT-licensed implementation of the standard C library) build for Ducky ISA
 
@@ -46,7 +46,7 @@ export CC=/opt/ducky/bin/clang
 export CFLAGS="--target=ducky-unknown-none \
                -mllvm -disable-tail-duplicate \
                -mllvm -disable-early-taildup \
-               -gsplit-dwarf \
+               -gsplit-dwarf=single \
                -fno-builtin \
                -nostdlib \
                -nostdinc \
