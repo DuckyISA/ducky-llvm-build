@@ -17,6 +17,9 @@ BuildRequires:  ninja-build
 BuildRequires:	cmake
 BuildRequires:	cmake-data
 BuildRequires:  make
+# To deal with "ambiguous python shebang", we need pathfix.py
+BuildRequires: /usr/bin/pathfix.py
+BuildRequires:	python3-devel
 
 %description
 LLVM is a compiler infrastructure designed for compile-time, link-time,
@@ -28,6 +31,13 @@ This build of LLVM is patched to produce assembly code for Ducky VM.
 
 %prep
 %autosetup -n ducky-llvm-%{llvm_commit}
+
+pathfix.py -i %{__python3} -pn \
+    llvm/tools/opt-viewer/*.py \
+    clang/tools/clang-format/clang-format-diff.py \
+    clang/utils/hmaptool/hmaptool \
+    clang/tools/scan-view/bin/scan-view \
+    clang/tools/clang-format/git-clang-format
 
 %build
 mkdir -p _build
